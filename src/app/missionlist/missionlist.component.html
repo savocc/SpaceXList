@@ -1,0 +1,40 @@
+ 
+<div class="d-flex justify-content-center">
+<div class="spinner-border" role="status" >
+    <span class="sr-only" id="loading">Loading...</span>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</div>
+</div>
+
+ 
+<mat-toolbar color="primary">Missions List</mat-toolbar>
+
+ <table class="table" id='tab' data-vertable="ver1"> 
+    <thead>
+    <tr class ="row100 head">
+        <th scope="col">Mission Name </th>
+        <th scope="col">Launch Year</th>
+        <th scope="col">Detail</th>
+        <th scope="col">Mission Patch Small</th>
+        <th scope="col">Details link</th>
+    </tr>
+    </thead>
+    <tbody>
+     <tr class ="row100 head" *ngFor="let e of li;">
+        <td>{{ e.mission_name }}</td>
+        <td>{{ e.launch_year }}</td>
+        <td>{{ e.details }}</td>
+        <td><img src="{{ e.links.mission_patch_small }}" style="max-height: 60px;"></td>
+        <td>
+            <a routerLink="/part2/{{e.flight_number}}">Description</a>
+         <!-- <input type="button"  (click)="/part2/{{e.flight_number}}" value="arrow"/> -->
+         </td>
+    </tr>
+ 
+    
+    
+    </tbody>
+</table>
+ 
+ 
